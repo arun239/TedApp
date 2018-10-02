@@ -4,7 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 
 /**
- * Created by sumit on 30/09/18.
+ * Created by arun on 30/09/18.
  */
 @Entity(name = "tag")
 public class Tag extends BaseEntity {

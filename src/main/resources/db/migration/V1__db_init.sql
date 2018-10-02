@@ -12,7 +12,7 @@ create table ted_talk (
     views bigint(20) DEFAULT 0,
     createdat TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updatedat TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    deletedat TIMESTAMP DEFAULT NULL
+    deletedat DATETIME DEFAULT NULL
 );
 
 
@@ -21,7 +21,7 @@ create table tag (
     name varchar(500) NOT NULL,
     createdat TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updatedat TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    deletedat TIMESTAMP DEFAULT NULL
+    deletedat DATETIME DEFAULT NULL
 );
 
 
@@ -35,7 +35,7 @@ create table related_talk (
     viewed_count bigint(20) DEFAULT 0,
     createdat TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updatedat TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    deletedat TIMESTAMP DEFAULT NULL
+    deletedat DATETIME DEFAULT NULL
 );
 
 
@@ -44,7 +44,7 @@ create table rating_tag (
     name varchar(500) NOT NULL,
     createdat TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updatedat TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    deletedat TIMESTAMP DEFAULT NULL
+    deletedat DATETIME DEFAULT NULL
 );
 
 -- end standalone
@@ -58,7 +58,7 @@ create table ted_related_talk_join (
     related_talk_id bigint(20) NOT NULL,
     createdat TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updatedat TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    deletedat TIMESTAMP DEFAULT NULL,
+    deletedat DATETIME DEFAULT NULL,
     CONSTRAINT `ted_talk_id_fk_1` FOREIGN KEY (`ted_talk_id`) REFERENCES `ted_talk` (`id`),
     CONSTRAINT `related_talk_id_fk_1` FOREIGN KEY (`related_talk_id`) REFERENCES `related_talk`(`id`)
 );
@@ -69,7 +69,7 @@ create table ted_talks_tags_join (
     tag_id bigint(20) NOT NULL,
     createdat TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updatedat TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    deletedat TIMESTAMP DEFAULT NULL,
+    deletedat DATETIME DEFAULT NULL,
     CONSTRAINT `ted_talk_id_fk_2` FOREIGN KEY (`ted_talk_id`) REFERENCES `ted_talk`(`id`),
     CONSTRAINT `tag_id_fk_2` FOREIGN KEY (`tag_id`)  REFERENCES `tag`(`id`)
 );
@@ -87,7 +87,7 @@ create table ted_talks_ratings (
     count bigint(20) DEFAULT 0,
     createdat TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updatedat TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    deletedat TIMESTAMP DEFAULT NULL,
+    deletedat DATETIME DEFAULT NULL,
     CONSTRAINT `ted_talk_id_fk_3` FOREIGN KEY (`ted_talk_id`) REFERENCES `ted_talk`(`id`),
     CONSTRAINT `rating_tag_id_fk_3` FOREIGN KEY (`rating_tag_id`) REFERENCES `rating_tag`(`id`)
 );

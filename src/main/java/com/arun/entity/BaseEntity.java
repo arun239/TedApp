@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * Created by sumit on 30/09/18.
+ * Created by arun on 30/09/18.
  */
 
 @MappedSuperclass

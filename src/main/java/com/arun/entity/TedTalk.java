@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.Set;
 
 /**
- * Created by sumit on 30/09/18.
+ * Created by arun on 30/09/18.
  */
 @Entity(name = "ted_talk")
 public class TedTalk extends BaseEntity {

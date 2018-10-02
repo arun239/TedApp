@@ -3,7 +3,7 @@ package com.arun.entity;
 import javax.persistence.*;
 
 /**
- * Created by sumit on 30/09/18.
+ * Created by arun on 30/09/18.
  */
 @Entity(name = "ted_talks_ratings")
 public class TedTalkRating extends BaseEntity {

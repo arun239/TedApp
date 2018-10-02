@@ -11,7 +11,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * Created by sumit on 30/09/18.
+ * Created by arun on 30/09/18.
  */
 
 @Configuration
@@ -33,7 +33,7 @@ public class SwaggerConfiguration {
                 "TedApp REST API",
                 "1.0",
                 "-",
-                new Contact("Arun Gupta", "-", "gupta.arun665@curefit"),
+                new Contact("Arun Gupta", "-", "gupta.arun665@gmail.com"),
                 "",
                 "");
         return apiInfo;
